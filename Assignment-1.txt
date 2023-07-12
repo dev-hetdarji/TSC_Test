@@ -1,0 +1,44 @@
+
+1- Initialize a new repository. Add two files in your working directory.
+	- git init
+
+2- View the status of the working directory and the staging area.
+	- git status
+	On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Assignment-1.txt
+        Assignment-2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+3- Stage both files.
+	- git add .
+
+4- View the changes in the staging area.
+	- git diff --staged
+
+5- Create a commit.
+	- git commit -m "Files Added"
+
+6- View the list of commits.
+	- git log --oneline --all
+
+7- View the content of the last commit.
+	- git show HEAD
+
+8- Update one of the files. View the changes in the working directory.
+	- git diff
+
+9- Stage the changes.
+	- git add .
+
+10- Unstage the file.
+	- git restore --staged Assignment-1.txt
+
+
+Repository Link : https://github.com/dev-hetdarji/TSC_Test
+	
