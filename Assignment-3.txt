@@ -1,0 +1,63 @@
+1- Create a new branch called feature/login. Switch to the new branch.
+    - git switch -C feature/login
+
+2- Show all the branches.
+    - git branch
+
+3- Update file1.txt in the current branch (feature/login) and make a new commit.
+    - git commit -m "Assignment-3 Updated"
+
+4- Show the commits across all branches.
+    - git log --oneline --all
+
+5- Switch back to the master branch. Show the commits in the feature branch that don’t exist on master.
+    - git switch master
+    - git log main..feature/login
+
+6- View the differences between master and feature/login.
+    - git diff master..feature/login
+
+7- Merge feature/login into master.
+    - git merge feature/login 
+
+8- View the merged and unmerged branches.
+    - git branch --merged
+    - git branch --no-merged
+
+9- Delete the feature branch.
+    - git branch -d feature/login
+
+10- Create a new branch called feature/logout. On this branch, write blue to file1.txt and make a commit.
+    - git switch -C feature/logout
+    - git commit -am "Blue Added"
+
+Switch back to master, write green to file1.txt and make another commit.
+    - git checkout master 
+    - git commit -am "Green Added"
+
+Try to merge your feature branch into master. You’ll see a conflict. Resolve the conflict by accepting both changes. When you’re done merging, delete the new branch.
+    - git merge feature/logout
+    - git branch -d feature/logout
+
+11- Create a new branch called bugfix/login. On this branch, write orange to file1.txt and make a commit.
+    - git switch -C "bugfix/login"
+    - git commit -am "Orange added"
+
+Switch back to master, write green to file2.txt and make another commit. 
+    - git checkout master
+    - git commit -am "Green Added"
+
+View a graph of your branches. You’ll see divergence.
+    - git log --oneline --all -- graph
+
+Rebase the new branch on top of master.
+    - git rebase bugfix/login
+
+View the graph of branches again. Note that the divergence is gone.
+    - git log --oneline --all -- graph
+
+Do a fast-forward merge to bring the changes in the bugfix branch into master
+    - git switch bugfix/login   
+    - git merge main
+
+Repository link : https://github.com/dev-hetdarji/TSC_Test
